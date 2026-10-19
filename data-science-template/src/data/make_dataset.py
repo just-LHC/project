@@ -27,6 +27,7 @@ def read_data_from_files(files):
 
 
 Temp_Vib = read_data_from_files(files)
+Temp_Vib.info()
 # --------------------------------------------------------------
 # Merging datasets
 # --------------------------------------------------------------
@@ -40,30 +41,33 @@ Temp_Vib = read_data_from_files(files)
 # Accelerometer:    0.000833 set to 0.001667HZ
 # thermal probe:    0.000833 set to 0.001667HZ
 # Gyroscope:        xxx.000Hz
-sampling = {
-    "sensor_position": "last",
-    "Acceleration (g)": "mean",
-    "Velocity (mm/s)": "mean",
-    "K Factor": "mean",
-    "Temperature (°C)": "mean",
-    "VC_G (g)": "mean",
-    "FC": "mean",
-    "VCC_G (g)": "mean",
-}
-
-
-Temp_Vib[:1000].resample(rule="10min").apply(sampling)
-
-# split to days
-days = [g for n, g in Temp_Vib.groupby(pd.Grouper(freq="D"))]
-
-data_resample = pd.concat(
-    [df.resample(rule="10min").apply(sampling).dropna() for df in days]
+####
+wide_df = Temp_Vib.pivot(
+    columns="sensor_position",
+    values=[
+        "Acceleration (g)",
+        "Temperature (°C)",
+        "Velocity (mm/s)",
+        "K Factor",
+        "VC_G (g)",
+        "VCC_G (g)",
+        "FC",
+    ],
 )
 
-data_resample.info()
+wide_df.columns = [f"{sensor}_{feat}" for feat, sensor in wide_df.columns]
+
+# 1. Convert index to DatetimeIndex and sort chronologically
+wide_df.index = pd.to_datetime(wide_df.index)
+wide_df = wide_df.sort_index()
+
+# 2. Resample into uniform 10-minute intervals
+data_resample = wide_df.resample(rule="10min").mean().dropna().reset_index()
+
+
+wide_df.info()
 # --------------------------------------------------------------
 # Export dataset
 # --------------------------------------------------------------
-data_resample.to_csv("../../data/processed/resampled_data.csv")
+data_resample.to_csv("../../data/processed/resampled_data.csv", index=False)
 # done

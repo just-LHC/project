@@ -9,7 +9,6 @@ ENV/
 
 # Data directories and raw files
 data-science-template/data/
-**/data/
 *.csv
 *.parquet
 *.xlsx
@@ -34,5 +33,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 data-science-template/data/
-**/data/
+*.csv
+
+data-science-template/data/
+
 *.csv

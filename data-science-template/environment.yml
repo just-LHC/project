@@ -1,0 +1,19 @@
+# UV Environment Setup Instructions
+#  - Using requirements.txt with uv
+#  - Key Terminal Commands:
+#
+#    Create environment:    uv venv --python 3.12
+#    Activate (Windows):    .venv\Scripts\activate
+#    Install dependencies:  uv pip install -r requirements.txt
+#    Update/Prune to match: uv pip sync requirements.txt
+#    Export dependencies:   uv pip freeze > requirements.txt
+#    Delete environment:    Remove-Item -Recurse -Force .venv
+
+bottleneck
+numpy>=2.0.0
+pandas>=2.2.0
+matplotlib>=3.9.0
+ipykernel>=6.29.0
+ipython>=8.25.0
+jupyter-client>=8.6.0
+jupyter-core>=5.7.0

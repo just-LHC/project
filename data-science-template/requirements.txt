@@ -1,0 +1,10 @@
+ipykernel
+python-dotenv
+bottleneck
+numpy>=2.0.0
+pandas>=2.2.0
+matplotlib>=3.9.0
+ipykernel>=6.29.0
+ipython>=8.25.0
+jupyter-client>=8.6.0
+jupyter-core>=5.7.0

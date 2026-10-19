@@ -1,4 +1,38 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
 
-.venv
+# VS Code
+.vscode/
+
+# Data directories and raw files
+data-science-template/data/
+**/data/
+*.csv
+*.parquet
+*.xlsx
+*.zip
+*.tar.gz
+
+# Model artifacts (keep folder tracked via .gitkeep)
+data-science-template/models/*
+!data-science-template/models/.gitkeep
+*.pkl
+*.joblib
+*.pt
+*.onnx
+*.h5
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+data-science-template/data/
+**/data/
+*.csv

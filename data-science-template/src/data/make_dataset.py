@@ -1,6 +1,6 @@
 import pandas as pd
 from glob import glob
-
+import os
 
 # --------------------------------------------------------------
 # Turn into function
@@ -62,12 +62,14 @@ wide_df.index = pd.to_datetime(wide_df.index)
 wide_df = wide_df.sort_index()
 
 # 2. Resample into uniform 10-minute intervals
-data_resample = wide_df.resample(rule="10min").mean().dropna().reset_index()
+data_resample = wide_df.resample(rule="10min").mean().dropna()
 
-
-wide_df.info()
+data_resample.info()
 # --------------------------------------------------------------
 # Export dataset
 # --------------------------------------------------------------
-data_resample.to_csv("../../data/processed/resampled_data.csv", index=False)
+output_path = "../../data/interim/01_processed.pkl"
+os.makedirs(os.path.dirname(output_path), exist_ok=True)
+data_resample.to_pickle(output_path)
+print(f"✔ Saved {data_resample.shape} matrix to '{output_path}'")
 # done

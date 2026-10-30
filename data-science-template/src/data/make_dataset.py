@@ -7,7 +7,7 @@ import os
 # --------------------------------------------------------------
 
 
-files = glob("../../data/raw/*.csv")
+files = glob("../../data/raw_BM5/*.csv")
 
 
 def read_data_from_files(files):
@@ -62,13 +62,13 @@ wide_df.index = pd.to_datetime(wide_df.index)
 wide_df = wide_df.sort_index()
 
 # 2. Resample into uniform 10-minute intervals
-data_resample = wide_df.resample(rule="10min").mean().dropna()
+data_resample = wide_df.resample(rule="10min").mean().dropna(how="all")
 
 data_resample.info()
 # --------------------------------------------------------------
 # Export dataset
 # --------------------------------------------------------------
-output_path = "../../data/interim/01_processed.pkl"
+output_path = "../../data/interim/01_processed.pk1"
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 data_resample.to_pickle(output_path)
 print(f"✔ Saved {data_resample.shape} matrix to '{output_path}'")

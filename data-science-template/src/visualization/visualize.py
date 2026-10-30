@@ -9,7 +9,7 @@ import seaborn as sns
 # --------------------------------------------------------------
 # Load data
 # --------------------------------------------------------------
-data_path = "../../data/interim/01_processed.pkl"
+data_path = "../../data/interim/01_processed1.pkl"
 df = pd.read_pickle(data_path)
 
 # Ensure DatetimeIndex and chronological ordering
@@ -740,7 +740,7 @@ DRIVE_TRAIN_SENSOR_LABELS = {
     "7RV": "Splitter Upper Int-2 Inboard (7RV)",
     "8RV": "Splitter Upper Int-2 Outboard (8RV)",
     "11RV": "Splitter Upper Output Inboard (11RV)",
-    "12RV": "Splitter Upper Output Outboard (12RV)",  # Drives Top Spacer Shaft
+    # "12RV": "Splitter Upper Output Outboard (12RV)",  # Drives Top Spacer Shaft
 }
 
 ACTIVE_SENSORS = list(DRIVE_TRAIN_SENSOR_LABELS.keys())
@@ -1046,14 +1046,14 @@ ax_t1.set_title(
 ax_t1.set_xlabel("Bearing Temperature (°C)", fontweight="semibold")
 ax_t1.set_ylabel("RMS Velocity (mm/s)", fontweight="semibold")
 ax_t1.axhline(
-    2.3,
+    3.5,
     color="red",
     linestyle="--",
     alpha=0.6,
-    label="Elevated Vibration Alert (2.3 mm/s)",
+    label="Elevated Vibration Alert (3.5 mm/s)",
 )
 ax_t1.axvline(
-    46.0,
+    60.0,
     color="darkorange",
     linestyle="--",
     alpha=0.6,
@@ -1064,9 +1064,9 @@ ax_t1.grid(True, linestyle="--", alpha=0.5)
 
 # 2. Splitter Input Inboard (3RV)
 sc2 = ax_t2.scatter(
-    df_op["3RV_Temperature (°C)"],
-    df_op["3RV_Acceleration (g)"],
-    c=df_op["3RV_FC"],
+    df_op["8RV_Temperature (°C)"],
+    df_op["8RV_Velocity (mm/s)"],
+    c=df_op["8RV_FC"],
     cmap="plasma",
     s=35,
     alpha=0.75,
@@ -1074,14 +1074,14 @@ sc2 = ax_t2.scatter(
 cb2 = plt.colorbar(sc2, ax=ax_t2)
 cb2.set_label("Crest Factor (FC - Impulsiveness)", fontweight="semibold")
 ax_t2.set_title(
-    "2. Splitter Input Inboard DE (3RV): Pinion Mesh Thermal-Vibration Correlation",
+    "2. Splitter Input Inboard DE (8RV): Pinion Mesh Thermal-Vibration Correlation",
     fontsize=10.5,
     fontweight="bold",
 )
 ax_t2.set_xlabel("Bearing Temperature (°C)", fontweight="semibold")
-ax_t2.set_ylabel("RMS Acceleration (g)", fontweight="semibold")
+ax_t2.set_ylabel("RMS Velocity (mm/s)", fontweight="semibold")
 ax_t2.axvline(
-    48.0,
+    60.0,
     color="darkorange",
     linestyle="--",
     alpha=0.6,

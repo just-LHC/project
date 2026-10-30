@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # --------------------------------------------------------------
 # Load data
 # --------------------------------------------------------------
-data_path = "../../data/interim/01_processed.pkl"
+data_path = "../../data/interim/01_processed1.pkl"
 df = pd.read_pickle(data_path)
 
 # Uses Motor DE (1RV) acceleration >= 0.10g as the running condition
@@ -161,7 +161,7 @@ delta_t = {
 box_data = [d.dropna() for d in delta_t.values()]
 bp = ax.boxplot(
     box_data,
-    labels=list(delta_t.keys()),
+    tick_labels=list(delta_t.keys()),
     patch_artist=True,
     boxprops=dict(facecolor="#aec7e8", color="#1f77b4", linewidth=1.2),
     medianprops=dict(color="darkred", linewidth=1.5),

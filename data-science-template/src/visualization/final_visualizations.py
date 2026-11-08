@@ -42,7 +42,7 @@ TEMP_TRIP = 80.0  # °C (Hard interlock OEM emergency shutdown)
 TORQUE_SPLIT_IDEAL = 1.00  # Perfect 50/50 balance
 TORQUE_SPLIT_TOL_LOWER = 0.85  # -15% Mechanical lower limit
 TORQUE_SPLIT_TOL_UPPER = 1.15  # +15% Mechanical upper limit
-SHAFT_SKEW_LIMIT = 0.30  # g (Maximum allowable Inboard - Outboard peak delta)
+SHAFT_SKEW_LIMIT = 1.0  # g (Maximum allowable Inboard - Outboard peak delta)
 BACKLASH_CHATTER_LIMIT = 2.50  # Ratio (VCC_G / VC_G rebound threshold)
 
 # Telemetry Position Mapping (Active 12 Sensors)
@@ -122,7 +122,7 @@ def load_and_preprocess_telemetry(data_path="../../data/interim/01_processed.pkl
     df_resampled = df.resample(rule="10min").mean().dropna(how="all")
 
     # 2.3 MW running threshold: Motor NDE RMS acceleration >= 0.10g
-    is_operational = df_resampled["1RV_Acceleration (g)"] >= 0.10
+    is_operational = df_resampled["1RV_Acceleration (g)"] >= 0.05
     df_operational = df_resampled[is_operational].copy()
 
     print(
@@ -1149,7 +1149,7 @@ def plot_shaft_deflection_matrix(df_op, export_dir):
         )
 
     colors2 = [
-        "#ff7f0e" if abs(x) > 3.0 else "#1f77b4" for x in df_skew["Δ Temperature (°C)"]
+        "#f00b0b" if abs(x) >= 8.0 else "#1f77b4" for x in df_skew["Δ Temperature (°C)"]
     ]
     bars2 = ax2.barh(
         df_skew.index,
@@ -1160,7 +1160,7 @@ def plot_shaft_deflection_matrix(df_op, export_dir):
     )
     ax2.axvline(0, color="black", linewidth=1.2)
     ax2.axvspan(
-        -2.0, 2.0, color="blue", alpha=0.1, label="Balanced Thermal Band (±2.0°C)"
+        -3.0, 3.0, color="blue", alpha=0.1, label="Balanced Thermal Band (±3.0°C)"
     )
     ax2.set_title("2. Thermal Skew: Differential Bearing Loading", fontweight="bold")
     ax2.set_xlabel("Δ Temperature (Inboard - Outboard) [°C]", fontweight="semibold")
@@ -1356,6 +1356,32 @@ def main():
     print(f"\n✔ Pipeline execution complete. All visual assets and alert CSV saved to:")
     print(f"   '{os.path.abspath(export_dir)}'")
     print("=" * 95)
+
+    # Motor: Compare 10RV (Non Drive End) vs 12RV (Drive End  Coupled)
+    df_op = df_operational.copy()
+    df_op.info()
+    lower_out = df_op["10RV_Acceleration (g)"]
+    upper_out = df_op["12RV_Acceleration (g)"]
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 7), sharex=True)
+
+    # 1. Motor bearings
+    ax1.plot(
+        df_op.index,
+        lower_out,
+        label="10RV lower output",
+        color="#e54c0b",
+    )
+    ax1.plot(
+        df_op.index,
+        upper_out,
+        label="12RV upper ouput",
+        color="#1f77b4",
+        linewidth=1.6,
+    )
+    ax1.set_ylabel("Acceleration (g)", fontweight="semibold")
+    ax1.set_title("Motor Bearings Vibration: 10RV  vs. 12RV ", fontweight="bold")
+    ax1.legend(loc="upper right")
+    ax1.grid(True, linestyle="--", alpha=0.5)
 
 
 if __name__ == "__main__":

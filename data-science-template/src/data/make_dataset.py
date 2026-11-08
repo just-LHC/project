@@ -68,7 +68,7 @@ data_resample.info()
 # --------------------------------------------------------------
 # Export dataset
 # --------------------------------------------------------------
-output_path = "../../data/interim/01_processed.pk1"
+output_path = "../../data/interim/01_processed.pkl"
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 data_resample.to_pickle(output_path)
 print(f"✔ Saved {data_resample.shape} matrix to '{output_path}'")

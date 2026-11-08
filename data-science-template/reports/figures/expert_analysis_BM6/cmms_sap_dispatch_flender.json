@@ -1,0 +1,146 @@
+[
+    {
+        "Work_Order_Trigger": "2026-11-04 15:42_2RV",
+        "Equipment_ID": "BALL_MILL_02_PRIMARY_DRIVE",
+        "Asset_Description": "4500kW Cantarey SL800 Motor / FLENDER DMG2 22 Reducer",
+        "Trigger_Sensor": "2RV",
+        "Position": "Motor DE Bearing [Coupled] (2RV)",
+        "Fault_Classification": "Raceway microcracks, tooth pitting, or roller spalling",
+        "Priority_Level": "P2",
+        "Severity_Score_MHI": 63.0,
+        "Est_RUL": "0 (Immediate Outage)",
+        "Prescriptive_Derate": "-10% Feed Derate recommended.",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Motor DE Bearing [Coupled] (2RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "PRESCRIPTIVE DERATE: Recommend -10% mill feed to suppress dynamic shock. Draw oil ferrography."
+    },
+    {
+        "Work_Order_Trigger": "2026-11-04 15:42_4RV",
+        "Equipment_ID": "BALL_MILL_02_PRIMARY_DRIVE",
+        "Asset_Description": "4500kW Cantarey SL800 Motor / FLENDER DMG2 22 Reducer",
+        "Trigger_Sensor": "4RV",
+        "Position": "Gearbox Input Outboard NDE (4RV)",
+        "Fault_Classification": "Catastrophic tooth flank shear or bearing clearance collapse",
+        "Priority_Level": "P1",
+        "Severity_Score_MHI": 64.1,
+        "Est_RUL": "0 (Immediate Outage)",
+        "Prescriptive_Derate": "Immediate shutdown required.",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Gearbox Input Outboard NDE (4RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "MANDATORY OUTAGE: Remove load. Internal borescope inspection required."
+    },
+    {
+        "Work_Order_Trigger": "2026-11-04 15:42_6RV",
+        "Equipment_ID": "BALL_MILL_02_PRIMARY_DRIVE",
+        "Asset_Description": "4500kW Cantarey SL800 Motor / FLENDER DMG2 22 Reducer",
+        "Trigger_Sensor": "6RV",
+        "Position": "Intermediate-1 Outboard (6RV)",
+        "Fault_Classification": "Catastrophic tooth flank shear or bearing clearance collapse",
+        "Priority_Level": "P1",
+        "Severity_Score_MHI": 59.1,
+        "Est_RUL": "0 (Immediate Outage)",
+        "Prescriptive_Derate": "Immediate shutdown required.",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Intermediate-1 Outboard (6RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "MANDATORY OUTAGE: Remove load. Internal borescope inspection required."
+    },
+    {
+        "Work_Order_Trigger": "2026-11-04 15:42_7RV",
+        "Equipment_ID": "BALL_MILL_02_PRIMARY_DRIVE",
+        "Asset_Description": "4500kW Cantarey SL800 Motor / FLENDER DMG2 22 Reducer",
+        "Trigger_Sensor": "7RV",
+        "Position": "Intermediate-2 Inboard (7RV)",
+        "Fault_Classification": "Catastrophic tooth flank shear or bearing clearance collapse",
+        "Priority_Level": "P1",
+        "Severity_Score_MHI": 75.3,
+        "Est_RUL": "0 (Immediate Outage)",
+        "Prescriptive_Derate": "Immediate shutdown required.",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Intermediate-2 Inboard (7RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "MANDATORY OUTAGE: Remove load. Internal borescope inspection required."
+    },
+    {
+        "Work_Order_Trigger": "2026-11-04 15:42_8RV",
+        "Equipment_ID": "BALL_MILL_02_PRIMARY_DRIVE",
+        "Asset_Description": "4500kW Cantarey SL800 Motor / FLENDER DMG2 22 Reducer",
+        "Trigger_Sensor": "8RV",
+        "Position": "Intermediate-2 Outboard (8RV)",
+        "Fault_Classification": "Raceway microcracks, tooth pitting, or roller spalling",
+        "Priority_Level": "P2",
+        "Severity_Score_MHI": 73.1,
+        "Est_RUL": "11 Days",
+        "Prescriptive_Derate": "-10% Feed Derate recommended.",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Intermediate-2 Outboard (8RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "PRESCRIPTIVE DERATE: Recommend -10% mill feed to suppress dynamic shock. Draw oil ferrography."
+    },
+    {
+        "Work_Order_Trigger": "2026-11-04 15:42_9RV",
+        "Equipment_ID": "BALL_MILL_02_PRIMARY_DRIVE",
+        "Asset_Description": "4500kW Cantarey SL800 Motor / FLENDER DMG2 22 Reducer",
+        "Trigger_Sensor": "9RV",
+        "Position": "Output Shaft Inboard (9RV)",
+        "Fault_Classification": "Catastrophic tooth flank shear or bearing clearance collapse",
+        "Priority_Level": "P2",
+        "Severity_Score_MHI": 87.8,
+        "Est_RUL": "7 Days",
+        "Prescriptive_Derate": "Immediate shutdown required.",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Output Shaft Inboard (9RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "MANDATORY OUTAGE: Remove load. Internal borescope inspection required."
+    },
+    {
+        "Work_Order_Trigger": "2026-11-04 15:42_10RV",
+        "Equipment_ID": "BALL_MILL_02_PRIMARY_DRIVE",
+        "Asset_Description": "4500kW Cantarey SL800 Motor / FLENDER DMG2 22 Reducer",
+        "Trigger_Sensor": "10RV",
+        "Position": "Output Shaft Outboard (10RV)",
+        "Fault_Classification": "Catastrophic tooth flank shear or bearing clearance collapse",
+        "Priority_Level": "P2",
+        "Severity_Score_MHI": 91.0,
+        "Est_RUL": "11 Days",
+        "Prescriptive_Derate": "Immediate shutdown required.",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Output Shaft Outboard (10RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "MANDATORY OUTAGE: Remove load. Internal borescope inspection required."
+    },
+    {
+        "Work_Order_Trigger": "2026-11-04 15:42_11RO",
+        "Equipment_ID": "BALL_MILL_02_PRIMARY_DRIVE",
+        "Asset_Description": "4500kW Cantarey SL800 Motor / FLENDER DMG2 22 Reducer",
+        "Trigger_Sensor": "11RO",
+        "Position": "Top Casing Radial-Axial / Sump Channel (11RO)",
+        "Fault_Classification": "Catastrophic tooth flank shear or bearing clearance collapse",
+        "Priority_Level": "P1",
+        "Severity_Score_MHI": 80.5,
+        "Est_RUL": "0 (Immediate Outage)",
+        "Prescriptive_Derate": "Immediate shutdown required.",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Top Casing Radial-Axial / Sump Channel (11RO)"
+            }
+        ],
+        "Prescribed_Field_Action": "MANDATORY OUTAGE: Remove load. Internal borescope inspection required."
+    }
+]

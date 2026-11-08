@@ -1,0 +1,36 @@
+[
+    {
+        "Work_Order_Trigger": "2026-10-31 07:21_1RV",
+        "Equipment_ID": "BALL_MILL_01_PRIMARY_DRIVE",
+        "Asset_Description": "2300kW SEC Motor / RENK Dual-Pinion Reducer",
+        "Trigger_Sensor": "1RV",
+        "Position": "Motor NDE (1RV)",
+        "Fault_Classification": "Microcracks / Spalling",
+        "Priority_Level": "P2",
+        "Severity_Score_MHI": 37.5,
+        "Est_RUL": "0 Days",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Motor NDE (1RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "PRESCRIPTIVE DERATE: Recommend -10% mill feed to suppress dynamic shock. Draw oil ferrography."
+    },
+    {
+        "Work_Order_Trigger": "2026-10-31 07:21_2RV",
+        "Equipment_ID": "BALL_MILL_01_PRIMARY_DRIVE",
+        "Asset_Description": "2300kW SEC Motor / RENK Dual-Pinion Reducer",
+        "Trigger_Sensor": "2RV",
+        "Position": "Motor DE - Main Coupling (2RV)",
+        "Fault_Classification": "Microcracks / Spalling",
+        "Priority_Level": "P2",
+        "Severity_Score_MHI": 48.5,
+        "Est_RUL": "0 Days",
+        "Required_Spare_Parts": [
+            {
+                "Description": "Replacement Bearings/Seals for Motor DE - Main Coupling (2RV)"
+            }
+        ],
+        "Prescribed_Field_Action": "PRESCRIPTIVE DERATE: Recommend -10% mill feed to suppress dynamic shock. Draw oil ferrography."
+    }
+]

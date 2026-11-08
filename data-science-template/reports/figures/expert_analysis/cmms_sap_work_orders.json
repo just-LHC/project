@@ -1,0 +1,24 @@
+[
+    {
+        "Equipment_ID": "BALL_MILL_01_PRIMARY_DRIVE",
+        "Asset_Description": "2300kW SEC Motor / RENK Dual-Pinion Reducer",
+        "Trigger_Sensor": "1RV",
+        "Location": "Motor NDE (1RV)",
+        "Fault_Classification": "Raceway microcracks, tooth pitting, or roller spalling",
+        "Priority": "P2",
+        "MHI_Severity": 37.5,
+        "Estimated_RUL": "0 Days",
+        "Action_Required": "PRESCRIPTIVE DERATE: Recommend -10% mill feed to suppress dynamic shock. Draw oil ferrography."
+    },
+    {
+        "Equipment_ID": "BALL_MILL_01_PRIMARY_DRIVE",
+        "Asset_Description": "2300kW SEC Motor / RENK Dual-Pinion Reducer",
+        "Trigger_Sensor": "2RV",
+        "Location": "Motor DE - Main Coupling (2RV)",
+        "Fault_Classification": "Raceway microcracks, tooth pitting, or roller spalling",
+        "Priority": "P2",
+        "MHI_Severity": 48.5,
+        "Estimated_RUL": "0 Days",
+        "Action_Required": "PRESCRIPTIVE DERATE: Recommend -10% mill feed to suppress dynamic shock. Draw oil ferrography."
+    }
+]

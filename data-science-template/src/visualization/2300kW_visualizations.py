@@ -100,7 +100,7 @@ def load_and_preprocess_telemetry(data_path="../../data/interim/01_processed.pkl
     df_resampled = df.resample(rule="10min").mean().dropna(how="all")
 
     # 2.3 MW running threshold: Motor NDE RMS acceleration >= 0.10g
-    is_operational = df_resampled["1RV_Acceleration (g)"] >= 0.10
+    is_operational = df_resampled["1RV_Acceleration (g)"] >= 0.00
     df_operational = df_resampled[is_operational].copy()
 
     print(
